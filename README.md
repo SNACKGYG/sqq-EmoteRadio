@@ -10,7 +10,7 @@
 # Preview معاينة
  ![radioemote](https://github.com/SNACKGYG/sqq-EmoteRadio/assets/97559522/95d48589-9bcc-487f-8bed-f071eb1889a4)
 
-[video]([https://discord.gg/PWnxxHcpbr](https://streamable.com/qforls))
+[video](https://streamable.com/qforls)
 
 ### INSTALLATION التثبيت
 1- In your stream animation script, add the files in the <br> في سكربت الحركات الخاص بك stream قم بأضافة الملفات الموجودة في ملف <br>
@@ -41,21 +41,20 @@
 ### pma-voice التثبيت
 
 ```lua
-					if FemaleHasRadio then 
-						RequestAnimDict('random@arrests')
-						while not HasAnimDictLoaded('random@arrests') do
-							Citizen.Wait(10)
-						end
-						TaskPlayAnim(PlayerPedId(), "random@arrests", "generic_radio_enter", 8.0, 2.0, -1, 50, 2.0, 0, 0, 0)
-					else
-						RequestAnimDict('ultra@walkie_talkie')
-						while not HasAnimDictLoaded('ultra@walkie_talkie') do
-							Citizen.Wait(10)
-						end
-						newRadio()
-						TaskPlayAnim(PlayerPedId(), 'ultra@walkie_talkie', 'walkie_talkie', 8.0, 2.0, -1, 50, 2.0, 0, 0, 0)
-					end
-
+if FemaleHasRadio then 
+	RequestAnimDict('random@arrests')
+	while not HasAnimDictLoaded('random@arrests') do
+		Citizen.Wait(10)
+	end
+	TaskPlayAnim(PlayerPedId(), "random@arrests", "generic_radio_enter", 8.0, 2.0, -1, 50, 2.0, 0, 0, 0)
+else
+	RequestAnimDict('ultra@walkie_talkie')
+	while not HasAnimDictLoaded('ultra@walkie_talkie') do
+		Citizen.Wait(10)
+	end
+	newRadio()
+	TaskPlayAnim(PlayerPedId(), 'ultra@walkie_talkie', 'walkie_talkie', 8.0, 2.0, -1, 50, 2.0, 0, 0, 0)
+end
 ```
 
 
