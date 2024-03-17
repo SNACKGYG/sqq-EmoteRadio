@@ -8,7 +8,9 @@
 [Discord](https://discord.gg/PWnxxHcpbr)
 
 # Preview معاينة
-https://streamable.com/qforls
+ ![radioemote](https://github.com/SNACKGYG/sqq-EmoteRadio/assets/97559522/95d48589-9bcc-487f-8bed-f071eb1889a4)
+
+[video]([https://discord.gg/PWnxxHcpbr](https://streamable.com/qforls))
 
 ### INSTALLATION التثبيت
 1- In your stream animation script, add the files in the <br> في سكربت الحركات الخاص بك stream قم بأضافة الملفات الموجودة في ملف <br>
@@ -20,17 +22,43 @@ https://streamable.com/qforls
 - Follow the next `qb-emotes > client.lua > AnimationList.lua` folder
 
 ```lua
-    ["radio"] = { 
-        "airforce@at_ease",
-        "base",
-        "Airforce - At Ease",
+	["wtr"] = {
+        "ultra@walkie_talkie",
+        "walkie_talkie",
+        "Walkie Talkie radio",
         AnimationOptions = {
-            EmoteLoop = true,
-            EmoteMoving = false
+            Prop = "prop_cs_hand_radio",
+            PropBone = 18905,
+            PropPlacement = {
+                vector3(0.140000, 0.030000, 0.030000),
+                vector3(-105.877000, -10.943200, -33.721200),
+				},
+         EmoteLoop = true,
+         EmoteMoving = true
         }
     },
 ```
+### pma-voice التثبيت
+
+```lua
+					if FemaleHasRadio then 
+						RequestAnimDict('random@arrests')
+						while not HasAnimDictLoaded('random@arrests') do
+							Citizen.Wait(10)
+						end
+						TaskPlayAnim(PlayerPedId(), "random@arrests", "generic_radio_enter", 8.0, 2.0, -1, 50, 2.0, 0, 0, 0)
+					else
+						RequestAnimDict('ultra@walkie_talkie')
+						while not HasAnimDictLoaded('ultra@walkie_talkie') do
+							Citizen.Wait(10)
+						end
+						newRadio()
+						TaskPlayAnim(PlayerPedId(), 'ultra@walkie_talkie', 'walkie_talkie', 8.0, 2.0, -1, 50, 2.0, 0, 0, 0)
+					end
+
+```
 
 
-[شرح التركيب](#emotes)
+
+[installation](#sqq-EmoteRadio)
 
